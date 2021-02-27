@@ -49,6 +49,15 @@ form {
     textarea {
         height: 400px;
     }
+    button {
+        padding: 15px;
+        margin: 0;
+        border: 1px solid #595757;
+        &:hover {
+            background-color: #9a9;
+            cursor: pointer;
+        }
+    }
 }
 
 header, main, footer {
