@@ -1,5 +1,6 @@
 +++
 title = "Mein Ansatz"
+slug = "ansatz"
 weight = 2
 +++
 

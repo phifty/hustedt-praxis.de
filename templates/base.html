@@ -30,18 +30,10 @@
             <span class="description">{{ config.description }}</span>
         </div>
         <div class="navigation">
-            {% set main_section = get_section(path="_index.md") %}
-
-            <a href="{{ main_section.permalink | safe }}">{{ main_section.title | safe }}</a>
-
-            {% for page in main_section.pages %}
-            <a href="{{ page.permalink | safe }}">{{ page.title | safe }}</a>
-            {% endfor %}
-
-            {% for subsection_path in main_section.subsections %}
-            {% set subsection = get_section(path=subsection_path) %}
-            <a href="{{ subsection.permalink | safe }}">{{ subsection.title | safe }}</a>
-            {% endfor %}
+            <a href="/">Willkommen</a>
+            <a href="/ansatz">Mein Ansatz</a>
+            <a href="/angebote">Angebote</a>
+            <a href="/kontakt">Kontakt</a>
         </div>
     </header>
     <main>
