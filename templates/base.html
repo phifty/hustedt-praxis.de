@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="referrer" content="no-referrer">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+
+    <meta property="og:title" content="{{ config.title }}" />
+    <meta property="og:description" content="{{ config.description }}">
+    <meta property="og:site_name" content="{{ config.title }}" />
+    <meta property="og:url" content="{{ config.base_url }}" />
+
+    <meta name="twitter:title" content="{{ config.title }}" />
+    <meta name="twitter:description" content="{{ config.description | truncate(length=200) }}">
+
+    <meta name="description" content="{{ config.description }}">
+
+    <title>{{ config.title }}</title>
+
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/index.css">
+</head>
+
+<body>
+    <header>
+        <div class="title">
+            <span class="name">{{ config.title }}</span>
+            <span class="description">{{ config.description }}</span>
+        </div>
+        <div class="navigation">
+            {% set main_section = get_section(path="_index.md") %}
+
+            <a href="{{ main_section.permalink | safe }}">{{ main_section.title | safe }}</a>
+
+            {% for page in main_section.pages %}
+            <a href="{{ page.permalink | safe }}">{{ page.title | safe }}</a>
+            {% endfor %}
+
+            {% for subsection_path in main_section.subsections %}
+            {% set subsection = get_section(path=subsection_path) %}
+            <a href="{{ subsection.permalink | safe }}">{{ subsection.title | safe }}</a>
+            {% endfor %}
+        </div>
+    </header>
+    <main>
+        {% block main %}
+        {% endblock main %}
+    </main>
+    <footer>
+        {% set impress_page = get_page(path="impressum.md") %}
+        <a href="{{ impress_page.permalink | safe }}">{{ impress_page.title | safe }}</a>
+    </footer>
+</body>
+
+</html>
