@@ -15,10 +15,16 @@ highlight_code = false
 
 [extra]
 navigation = [
-  {type = "section", path = "_index.md"},
-  {type = "page", path = "ansatz.md"},
+  {type = "page", path = "ueber-mich.md"},
   {type = "section", path = "angebote/_index.md"},
   {type = "page", path = "kontakt.md"},
+]
+
+sub_navigation = [
+  {type = "page", path = "angebote/psychotherapie.md"},
+  {type = "page", path = "angebote/supervision.md"},
+  {type = "page", path = "angebote/coaching.md"},
+  {type = "page", path = "angebote/paedagogische-beratung.md"},
 ]
 
 footer = [

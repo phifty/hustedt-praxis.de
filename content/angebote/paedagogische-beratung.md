@@ -1,6 +1,6 @@
 +++
 title = "Pädagogische Beratung"
-weight = 4
+template = "sub-page.html"
 +++
 
 {{ image(alt="Pädagogische Beratung", src="/image/paedagogische-beratung.jpg", class="top-right") }}

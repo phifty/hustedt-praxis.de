@@ -1,6 +1,6 @@
 +++
 title = "Psychotherapie"
-weight = 1
+template = "sub-page.html"
 +++
 
 {{ image(alt="Psychotherapie", src="/image/psychotherapie.jpg", class="top-right") }}

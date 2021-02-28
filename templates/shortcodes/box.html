@@ -1,5 +1,15 @@
+{% if href %}
+<div class="box">
+    <a href="{{ href }}">
+        <h1>{{ title }}</h1>
+        {% if description %}<h2>{{ description }}</h2>{% endif %}
+        {{ body | markdown | safe }}
+    </a>
+</div>
+{% else %}
 <div class="box">
     <h1>{{ title }}</h1>
-    <h2>{{ description }}</h2>
+    {% if description %}<h2>{{ description }}</h2>{% endif %}
     {{ body | markdown | safe }}
 </div>
+{% endif %}

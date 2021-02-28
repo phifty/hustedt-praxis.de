@@ -27,13 +27,15 @@
 
 <body>
     <header>
-        <div class="title">
+        <a class="title" href="/">
             <span class="name">{{ config.title }}</span>
             <span class="description">{{ config.description }}</span>
-        </div>
+        </a>
         <div class="navigation">
             {{ macros::links(entries=config.extra.navigation) }}
         </div>
+        {% block sub_navigation %}
+        {% endblock sub_navigation %}
     </header>
     <main>
         {% block main %}

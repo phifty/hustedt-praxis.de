@@ -1,7 +1,5 @@
 +++
 title = "Angebote"
-weight = 2
-sort_by = "weight"
 +++
 
 # Kosten

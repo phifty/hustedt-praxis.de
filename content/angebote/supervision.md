@@ -1,6 +1,6 @@
 +++
 title = "Supervision"
-weight = 2
+template = "sub-page.html"
 +++
 
 {{ image(alt="Supervision", src="/image/supervision.jpg", class="top-right") }}
