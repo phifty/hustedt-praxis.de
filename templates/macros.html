@@ -1,0 +1,21 @@
+{% macro links(entries) %}
+{% for entry in entries %}
+
+{% if entry.type == "page" %}
+{% set p = get_page(path=entry.path) %}
+{{ macros::link(path=p.path, label=p.title) }}
+{% endif %}
+
+{% if entry.type == "section" %}
+{% set s = get_section(path=entry.path) %}
+{{ macros::link(path=s.path, label=s.title) }}
+{% endif %}
+
+{% endfor %}
+{% endmacro links %}
+
+{% macro link(path, label, class="") %}
+<a href="{% if path == '/' %}{{ path }}{% else %}{{ path | trim_end_matches(pat='/') }}{% endif %}" class="{{ class }}">
+    {{ label | safe }}
+</a>
+{% endmacro link %}

@@ -1,0 +1,12 @@
+{% for entry in entries %}
+
+{% if entry.type == "page" %}
+{% set p = get_page(path=entry.path) %}
+<a href="{{ p.permalink }}">{{ p.title }}</a>
+{% endif %}
+
+{% endfor %}
+<a href="/">Willkommen</a>
+<a href="/ansatz">Mein Ansatz</a>
+<a href="/angebote">Angebote</a>
+<a href="/kontakt">Kontakt</a>

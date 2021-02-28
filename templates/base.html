@@ -1,3 +1,4 @@
+{% import "macros.html" as macros %}
 <!DOCTYPE html>
 <html lang="de">
 
@@ -23,6 +24,7 @@
     <link rel="stylesheet" href="/index.css">
 </head>
 
+
 <body>
     <header>
         <div class="title">
@@ -30,10 +32,7 @@
             <span class="description">{{ config.description }}</span>
         </div>
         <div class="navigation">
-            <a href="/">Willkommen</a>
-            <a href="/ansatz">Mein Ansatz</a>
-            <a href="/angebote">Angebote</a>
-            <a href="/kontakt">Kontakt</a>
+            {{ macros::links(entries=config.extra.navigation) }}
         </div>
     </header>
     <main>
@@ -41,9 +40,10 @@
         {% endblock main %}
     </main>
     <footer>
-        {% set impress_page = get_page(path="impressum.md") %}
-        <a href="{{ impress_page.permalink | safe }}">{{ impress_page.title | safe }}</a>
+        {{ macros::links(entries=config.extra.footer) }}
     </footer>
 </body>
+
+
 
 </html>

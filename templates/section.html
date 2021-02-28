@@ -1,10 +1,11 @@
+{% import "macros.html" as macros %}
 {% extends "base.html" %}
 
 {% block main %}
 
 <div class="center">
     {% for page in section.pages %}
-    <a class="field" href="{{ page.permalink | safe }}">{{ page.title | safe }}</a>
+    {{ macros::link(path=page.path, label=page.title, class="field") }}
     {% endfor %}
 
     {{ section.content | safe }}</h1>

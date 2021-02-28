@@ -67,13 +67,18 @@ header, main, footer {
 
 header {
     .title {
-        padding: 100px 0;
+        text-align: center;
 
         .name {
+            display: block;
+            width: 100%;
+            padding: 80px 0 10px 0;
             font-size: 2em;
         }
         .description {
-            margin-left: 40px;
+            display: block;
+            width: 100%;
+            padding: 10px 0 80px 0;
         }
     }
     .navigation {
